@@ -4,12 +4,15 @@ run: compile link
 	./app $(ARGS)
 
 compile:
-# g++ -c src/*.cpp -Iinclude -D SFML_STATIC # Static
-	g++ -c src/*.cpp -Iinclude
+# g++ -c src/*.cpp -Iinclude
+# Static:
+	g++ -c src/*.cpp -Iinclude -DSFML_STATIC
 
 link:
-# g++ *.o -o app -L lib -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreetype -lgdi32 -lwinmm # Static
-	g++ *.o -o app -L lib -lsfml-graphics -lsfml-window -lsfml-system
+# -mwindows to hide console
+# g++ *.o -o app -L lib -lsfml-graphics -lsfml-window -lsfml-system -mwindows
+# Static:
+	g++ *.o -o app -L lib -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreetype -lgdi32 -lwinmm -mwindows
 
 ifeq ($(OS),Windows_NT)
 clean:
