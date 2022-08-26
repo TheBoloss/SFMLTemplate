@@ -12,7 +12,7 @@ link:
 # -mwindows to hide console
 # g++ *.o -o app -L lib -lsfml-graphics -lsfml-window -lsfml-system -mwindows
 # Static:
-	g++ *.o -o app -L lib -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreetype -lgdi32 -lwinmm -mwindows
+	g++ *.o -o app -L lib -lsfml-graphics-s -lsfml-window-s -lsfml-system-s -lopengl32 -lfreetype -lgdi32 -lwinmm -mwindows -static
 
 ifeq ($(OS),Windows_NT)
 clean:
