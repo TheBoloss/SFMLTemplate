@@ -1,4 +1,4 @@
-APP_NAME := shooter
+APP_NAME := app
 
 all: compile link
 
